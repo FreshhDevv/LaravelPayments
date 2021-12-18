@@ -13,10 +13,19 @@
                     <div class="row">
                         <div class="col-auto">
                             <label>How much do you want to pay?</label>
-                            <input type="number" min="5" step="0.01" class="form-control" name="value" value="{{ mt_rand(500, 100000) /100 }}">
+                            <input type="number" min="5" step="0.01" class="form-control" name="value" value="{{ mt_rand(500, 100000) /100 }}" required>
+                        </div>
+
+                        <div class="col-auto">
+                            <label>Currency</label>
+                            <select class="form-select" name="currency" required>
+                                @foreach ($currencies as $currency)
+                                    <option value="{{ $currency->iso }}">{{strtoupper($currency->iso) }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
-                    <div class="text-center" mt-3>
+                    <div class="text-center mt-3" >
                         <button type="submit" id="payButton" class="btn btn-primary btn-lg">Pay</button>
 
                     </div>
