@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Make a Payment') }}</div>
 
                 <div class="card-body">
-                    <form action="#" method="POST" id="paymentForm">
+                    <form action="{{ route('pay') }}" method="POST" id="paymentForm">
                         @csrf
                         <div class="row">
                             <div class="col-auto">
